@@ -2,15 +2,16 @@ import React, { useState } from "react";
 
 const SimpleHabit = (props) => {
   const [count, setCount] = useState(0);
-  const spanRef = React.createRef();
   const handleIncrement = () => {
     setCount(count + 1);
   };
   return (
-    <li>
-      <span ref={spanRef}>Reading </span>
-      <span>{count} </span>
-      <button onClick={handleIncrement}>+</button>
+    <li className="habit">
+      <span className="habit-name">Reading</span>
+      <span className="habit-count">{count}</span>
+      <button className="habit-button habit-increase" onClick={handleIncrement}>
+        <i className="fas fa-plus-square"></i>
+      </button>
     </li>
   );
 };
